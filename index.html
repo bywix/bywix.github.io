@@ -6,7 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
 body{
   background:#000;
@@ -14,164 +19,182 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   text-align:center;
   padding:80px 20px 40px;
 }
 
 header h1{
-  font-size:56px;
-  color:#ff0000;
+  font-size:50px;
   font-weight:900;
+  color:#ff0000;
+  margin-bottom:8px;
 }
 
 header p{
-  opacity:.7;
-  margin-top:8px;
+  opacity:.8;
+  margin-bottom:20px;
 }
 
-.join-discord{
+.join-btn{
   display:inline-block;
-  margin-top:18px;
-  padding:12px 32px;
-  border:2px solid #ff0000;
-  border-radius:30px;
-  color:#ff0000;
+  margin-bottom:40px;
+  padding:14px 45px;
+  background:#ff0000;
+  color:#fff;
+  border-radius:999px;
+  font-weight:900;
   text-decoration:none;
   transition:.3s;
 }
-.join-discord:hover{
-  background:#ff0000;
-  color:#fff;
-  box-shadow:0 0 30px #ff0000;
+
+.join-btn:hover{
   transform:scale(1.08);
+  box-shadow:0 0 25px rgba(255,0,0,.7);
 }
 
-/* ===== HERO IMAGE ===== */
+/* HERO IMAGE */
 .hero-img{
   width:420px;
   max-width:90%;
-  margin:50px auto 0;
   display:block;
+  margin:0 auto;
   border-radius:22px;
   box-shadow:0 0 90px rgba(255,0,0,.6);
-  animation:float3d 8s ease-in-out infinite;
+  transform-style:preserve-3d;
+  animation:heroFloat 12s ease-in-out infinite;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+  padding:60px 8% 90px;
+}
+
+.card{
+  position:relative;
+  background:#0a0a0a;
+  border:3px solid #ff0000;
+  border-radius:26px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,0,0,.25);
+  transition:.3s;
   transform-style:preserve-3d;
 }
 
-@keyframes float3d{
-  0%{transform:rotateY(-6deg) rotateX(4deg)}
-  50%{transform:rotateY(6deg) rotateX(-4deg)}
-  100%{transform:rotateY(-6deg) rotateX(4deg)}
-}
-
-/* ===== PRODUCTS ===== */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:45px;
-  padding:90px 8% 120px;
-}
-
-/* ===== CARD ===== */
-.card{
-  position:relative;
-  background:#050505;
-  border:3px solid #ff0000;
-  border-radius:28px;
-  padding:60px 30px 45px;
-  text-align:center;
-  box-shadow:0 0 40px rgba(255,0,0,.5);
-  transition:.3s;
+.card::before{
+  content:attr(data-title);
+  position:absolute;
+  top:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:6px 22px;
+  border:2px solid #ff0000;
+  border-radius:999px;
+  background:#000;
+  color:#ff0000;
+  font-size:13px;
+  font-weight:900;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 60px rgba(255,0,0,.8);
+  box-shadow:0 0 70px rgba(255,0,0,.6);
 }
 
-/* label */
-.label{
-  position:absolute;
-  top:-20px;
-  left:50%;
-  transform:translateX(-50%);
-  padding:8px 26px;
-  background:#000;
-  border:2px solid #ff0000;
-  border-radius:20px;
-  color:#ff0000;
-  font-size:14px;
-  box-shadow:0 0 25px rgba(255,0,0,.6);
-}
-
+/* TITLES */
 .card h2{
-  margin-top:15px;
+  margin-top:10px;
+  margin-bottom:8px;
 }
 
 .price{
-  color:#ff0000;
-  font-size:26px;
+  font-size:24px;
   font-weight:900;
-  margin:15px 0;
-  animation:pricePulse 3s ease-in-out infinite;
+  color:#ff2b2b;
+  margin-bottom:15px;
+  animation:pulse 2.5s ease-in-out infinite;
 }
 
-@keyframes pricePulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.04)}
-}
-
-ul{
+/* LIST */
+.card ul{
+  list-style:none;
   text-align:left;
-  margin:20px 0;
-}
-li{
-  margin:6px 0;
-  opacity:.85;
+  margin-bottom:25px;
 }
 
-/* ===== PURCHASE BUTTON ===== */
+.card ul li{
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+/* BUTTON */
 .buy-btn{
   display:inline-block;
-  padding:14px 42px;
-  border-radius:30px;
+  padding:14px 45px;
   background:#ff0000;
   color:#fff;
+  border-radius:999px;
+  font-weight:900;
   text-decoration:none;
-  font-weight:700;
   transition:.3s;
 }
 
 .buy-btn:hover{
   transform:scale(1.1);
-  box-shadow:0 0 35px #ff0000;
+  box-shadow:0 0 25px rgba(255,0,0,.7);
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   text-align:center;
-  padding:60px 20px;
-  border-top:2px solid #ff0000;
+  padding:50px 20px;
+  border-top:1px solid rgba(255,0,0,.3);
+}
+
+.socials{
+  margin-bottom:20px;
 }
 
 .socials a{
   display:inline-block;
   margin:0 10px;
-  padding:12px 30px;
+  padding:12px 32px;
   border:2px solid #ff0000;
-  border-radius:30px;
+  border-radius:999px;
   color:#ff0000;
   text-decoration:none;
+  font-weight:900;
   transition:.3s;
 }
 
 .socials a:hover{
   background:#ff0000;
   color:#fff;
-  transform:scale(1.1);
-  box-shadow:0 0 30px #ff0000;
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(255,0,0,.7);
+}
+
+footer p{
+  font-size:13px;
+  opacity:.6;
+}
+
+/* ANIMATIONS */
+@keyframes heroFloat{
+  0%{transform:translateY(0) rotateX(0deg) rotateY(-6deg);}
+  25%{transform:translateY(-10px) rotateX(4deg) rotateY(6deg);}
+  50%{transform:translateY(0) rotateX(-4deg) rotateY(-6deg);}
+  75%{transform:translateY(10px) rotateX(4deg) rotateY(6deg);}
+  100%{transform:translateY(0) rotateX(0deg) rotateY(-6deg);}
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.06);}
 }
 </style>
 </head>
@@ -181,57 +204,72 @@ footer{
 <header>
   <h1>bywix store</h1>
   <p>premium gaming tweaks & performance tools</p>
-  <a href="https://discord.gg/YOURSERVER" class="join-discord" target="_blank">Join Discord</a>
-  <img src="bywix.png" class="hero-img">
+
+  <a class="join-btn" href="https://dsc.gg/bywix" target="_blank">Join Discord</a>
+
+  <img src="product.png" class="hero-img">
 </header>
 
 <section class="products">
 
-  <div class="card">
-    <div class="label">Tweak Delay</div>
-    <h2>Tweak Delay</h2>
-    <div class="price">$7.99</div>
-    <ul>
-      <li>✓ Reduce input delay</li>
-      <li>✓ Smooth gameplay</li>
-      <li>✓ Safe & optimized</li>
-    </ul>
-    <a class="buy-btn" href="https://www.paypal.me/bywixstore/7.99" target="_blank">Purchase</a>
-  </div>
+<div class="card" data-title="Tweak Delay">
+  <h2>Tweak Delay</h2>
+  <div class="price">$7.99</div>
+  <ul>
+    <li>✓ Reduce input delay</li>
+    <li>✓ Smooth gameplay</li>
+    <li>✓ Safe & optimized</li>
+  </ul>
+  <a class="buy-btn" href="https://www.paypal.me/bywixstore/7.99" target="_blank">Purchase</a>
+</div>
 
-  <div class="card">
-    <div class="label">Full Tweak</div>
-    <h2>Full Tweak</h2>
-    <div class="price">$14.99</div>
-    <ul>
-      <li>✓ Max FPS boost</li>
-      <li>✓ Network optimization</li>
-      <li>✓ Best performance</li>
-    </ul>
-    <a class="buy-btn" href="https://www.paypal.me/bywixstore/14.99" target="_blank">Purchase</a>
-  </div>
+<div class="card" data-title="Full Tweak">
+  <h2>Full Tweak</h2>
+  <div class="price">$14.99</div>
+  <ul>
+    <li>✓ Max FPS boost</li>
+    <li>✓ Network optimization</li>
+    <li>✓ Best performance</li>
+  </ul>
+  <a class="buy-btn" href="https://www.paypal.me/bywixstore/14.99" target="_blank">Purchase</a>
+</div>
 
-  <div class="card">
-    <div class="label">Temp Spoofer</div>
-    <h2>Temp Spoofer</h2>
-    <div class="price">$5.99</div>
-    <ul>
-      <li>✓ Temporary HWID reset</li>
-      <li>✓ Fast & reliable</li>
-      <li>✓ Easy to use</li>
-    </ul>
-    <a class="buy-btn" href="https://www.paypal.me/bywixstore/5.99" target="_blank">Purchase</a>
-  </div>
+<div class="card" data-title="Temp Spoofer">
+  <h2>Temp Spoofer</h2>
+  <div class="price">$5.99</div>
+  <ul>
+    <li>✓ Temporary HWID reset</li>
+    <li>✓ Fast & reliable</li>
+    <li>✓ Easy to use</li>
+  </ul>
+  <a class="buy-btn" href="https://www.paypal.me/bywixstore/5.99" target="_blank">Purchase</a>
+</div>
 
 </section>
 
 <footer>
   <div class="socials">
-    <a href="https://discord.gg/YOURSERVER" target="_blank">Discord</a>
-    <a href="https://tiktok.com/@bywix" target="_blank">TikTok</a>
+    <a href="https://dsc.gg/bywix" target="_blank">Discord</a>
+    <a href="https://www.tiktok.com/@bywix" target="_blank">TikTok</a>
   </div>
-  <p style="margin-top:20px;opacity:.6">bywix © 2026 — All rights reserved</p>
+  <p>© 2026 bywix — all rights reserved • Unauthorized resale is prohibited</p>
 </footer>
+
+<script>
+document.querySelectorAll(".card").forEach(card=>{
+  card.addEventListener("mousemove",e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left;
+    const y=e.clientY-r.top;
+    const cx=r.width/2;
+    const cy=r.height/2;
+    card.style.transform=`rotateY(${(x-cx)/18}deg) rotateX(${-(y-cy)/18}deg)`;
+  });
+  card.addEventListener("mouseleave",()=>{
+    card.style.transform="rotateY(0) rotateX(0)";
+  });
+});
+</script>
 
 </body>
 </html>
