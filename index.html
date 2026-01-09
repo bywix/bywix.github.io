@@ -26,44 +26,45 @@ header{
 }
 
 header h1{
-  font-size:50px;
+  font-size:52px;
   font-weight:900;
   color:#ff0000;
-  margin-bottom:8px;
 }
 
 header p{
   opacity:.8;
-  margin-bottom:20px;
+  margin:10px 0 20px;
 }
 
 .join-btn{
   display:inline-block;
-  margin-bottom:40px;
   padding:14px 45px;
   background:#ff0000;
   color:#fff;
   border-radius:999px;
   font-weight:900;
   text-decoration:none;
-  transition:.3s;
+  transition:.25s;
 }
 
 .join-btn:hover{
-  transform:scale(1.08);
   box-shadow:0 0 25px rgba(255,0,0,.7);
 }
 
 /* HERO IMAGE */
+.hero-wrap{
+  perspective:1200px;
+  margin-top:40px;
+}
+
 .hero-img{
   width:420px;
   max-width:90%;
   display:block;
   margin:0 auto;
-  border-radius:22px;
-  box-shadow:0 0 90px rgba(255,0,0,.6);
-  transform-style:preserve-3d;
-  animation:heroFloat 12s ease-in-out infinite;
+  border-radius:24px;
+  box-shadow:0 0 90px rgba(255,0,0,.7);
+  animation:float3d 10s ease-in-out infinite;
 }
 
 /* PRODUCTS */
@@ -71,7 +72,7 @@ header p{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:35px;
-  padding:60px 8% 90px;
+  padding:70px 8% 90px;
 }
 
 .card{
@@ -81,9 +82,8 @@ header p{
   border-radius:26px;
   padding:40px 30px;
   text-align:center;
-  box-shadow:0 0 40px rgba(255,0,0,.25);
-  transition:.3s;
-  transform-style:preserve-3d;
+  box-shadow:0 0 40px rgba(255,0,0,.3);
+  transition:.25s;
 }
 
 .card::before{
@@ -102,21 +102,19 @@ header p{
 }
 
 .card:hover{
-  box-shadow:0 0 70px rgba(255,0,0,.6);
+  box-shadow:0 0 70px rgba(255,0,0,.7);
 }
 
-/* TITLES */
 .card h2{
   margin-top:10px;
-  margin-bottom:8px;
 }
 
 .price{
   font-size:24px;
   font-weight:900;
   color:#ff2b2b;
-  margin-bottom:15px;
-  animation:pulse 2.5s ease-in-out infinite;
+  margin:10px 0 15px;
+  animation:pulse 2.8s ease-in-out infinite;
 }
 
 /* LIST */
@@ -131,7 +129,7 @@ header p{
   font-size:14px;
 }
 
-/* BUTTON */
+/* PURCHASE BUTTON (NO ANIMATION) */
 .buy-btn{
   display:inline-block;
   padding:14px 45px;
@@ -140,12 +138,6 @@ header p{
   border-radius:999px;
   font-weight:900;
   text-decoration:none;
-  transition:.3s;
-}
-
-.buy-btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px rgba(255,0,0,.7);
 }
 
 /* FOOTER */
@@ -155,26 +147,21 @@ footer{
   border-top:1px solid rgba(255,0,0,.3);
 }
 
-.socials{
-  margin-bottom:20px;
-}
-
 .socials a{
   display:inline-block;
-  margin:0 10px;
+  margin:0 10px 20px;
   padding:12px 32px;
   border:2px solid #ff0000;
   border-radius:999px;
   color:#ff0000;
   text-decoration:none;
   font-weight:900;
-  transition:.3s;
+  transition:.25s;
 }
 
 .socials a:hover{
   background:#ff0000;
   color:#fff;
-  transform:scale(1.08);
   box-shadow:0 0 25px rgba(255,0,0,.7);
 }
 
@@ -184,17 +171,17 @@ footer p{
 }
 
 /* ANIMATIONS */
-@keyframes heroFloat{
-  0%{transform:translateY(0) rotateX(0deg) rotateY(-6deg);}
-  25%{transform:translateY(-10px) rotateX(4deg) rotateY(6deg);}
-  50%{transform:translateY(0) rotateX(-4deg) rotateY(-6deg);}
-  75%{transform:translateY(10px) rotateX(4deg) rotateY(6deg);}
-  100%{transform:translateY(0) rotateX(0deg) rotateY(-6deg);}
+@keyframes float3d{
+  0%   {transform:rotateX(0deg) rotateY(-8deg) translateY(0);}
+  25%  {transform:rotateX(6deg) rotateY(8deg) translateY(-8px);}
+  50%  {transform:rotateX(0deg) rotateY(-8deg) translateY(0);}
+  75%  {transform:rotateX(-6deg) rotateY(8deg) translateY(8px);}
+  100% {transform:rotateX(0deg) rotateY(-8deg) translateY(0);}
 }
 
 @keyframes pulse{
   0%,100%{transform:scale(1);}
-  50%{transform:scale(1.06);}
+  50%{transform:scale(1.04);}
 }
 </style>
 </head>
@@ -204,10 +191,11 @@ footer p{
 <header>
   <h1>bywix store</h1>
   <p>premium gaming tweaks & performance tools</p>
-
   <a class="join-btn" href="https://dsc.gg/bywix" target="_blank">Join Discord</a>
 
-  <img src="product.png" class="hero-img">
+  <div class="hero-wrap">
+    <img src="product.png" class="hero-img" alt="bywix">
+  </div>
 </header>
 
 <section class="products">
@@ -254,22 +242,6 @@ footer p{
   </div>
   <p>© 2026 bywix — all rights reserved • Unauthorized resale is prohibited</p>
 </footer>
-
-<script>
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mousemove",e=>{
-    const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left;
-    const y=e.clientY-r.top;
-    const cx=r.width/2;
-    const cy=r.height/2;
-    card.style.transform=`rotateY(${(x-cx)/18}deg) rotateX(${-(y-cy)/18}deg)`;
-  });
-  card.addEventListener("mouseleave",()=>{
-    card.style.transform="rotateY(0) rotateX(0)";
-  });
-});
-</script>
 
 </body>
 </html>
