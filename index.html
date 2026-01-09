@@ -3,99 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <title>bywix store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  margin: 0;
-  background: #000;
+  background: radial-gradient(circle at top, #120000, #000);
   color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* ===== HEADER ===== */
 header {
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 20px 70px;
 }
 
 header h1 {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 900;
   color: #ff0000;
-  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 header p {
-  font-size: 18px;
+  margin-top: 12px;
+  font-size: 15px;
   opacity: 0.8;
 }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 60px;
-}
-
-.card {
-  background: #0b0b0b;
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid #ff0000;
-  text-align: center;
+.discord-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 55px;
+  background: linear-gradient(135deg, #ff0000, #ff3b3b);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(255,0,0,0.6);
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(255,0,0,0.4);
+.discord-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 50px rgba(255,0,0,1);
+}
+
+.hero-img {
+  display: block;
+  margin: 60px auto 0;
+  max-width: 420px;
+  width: 90%;
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===== PRODUCTS ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 80px 8%;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,0,0,0.35);
+  border-radius: 22px;
+  padding: 35px;
+  text-align: center;
+  position: relative;
+  transition: 0.15s;
+  transform-style: preserve-3d;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255,0,0,0.35), transparent 60%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card h2 {
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .price {
-  font-size: 26px;
-  color: #ff0000;
-  font-weight: bold;
-  margin: 15px 0;
+  color: #ff2b2b;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 15px;
 }
 
 .card ul {
+  list-style: none;
+  margin-bottom: 30px;
   text-align: left;
-  margin: 20px 0;
 }
 
 .card ul li {
   margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .buy-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 14px 40px;
+  padding: 14px 45px;
   background: #ff0000;
   color: #fff;
-  font-weight: bold;
   border-radius: 999px;
+  font-weight: 900;
   text-decoration: none;
   transition: 0.3s;
+  box-shadow: 0 0 25px rgba(255,0,0,0.6);
 }
 
 .buy-btn:hover {
-  background: #fff;
-  color: #000;
+  transform: scale(1.12);
+  box-shadow: 0 0 45px rgba(255,0,0,1);
 }
 
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
+  font-size: 13px;
   opacity: 0.6;
-  font-size: 14px;
 }
 </style>
 </head>
@@ -105,51 +160,71 @@ footer {
 <header>
   <h1>bywix store</h1>
   <p>premium gaming tweaks & performance tools</p>
+
+  <a class="discord-btn" href="https://dsc.gg/bywix" target="_blank">Join Discord</a>
+
+  <img src="product.png" class="hero-img">
 </header>
 
 <section class="products">
-
-  <!-- Tweak Delay -->
   <div class="card">
     <h2>Tweak Delay</h2>
     <div class="price">$7.99</div>
     <ul>
-      <li>✔ Reduce input delay</li>
-      <li>✔ Smooth gameplay</li>
-      <li>✔ Safe & optimized</li>
+      <li>✓ Reduce input delay</li>
+      <li>✓ Smooth gameplay</li>
+      <li>✓ Safe & optimized</li>
     </ul>
-    <a href="checkout-delay.html" class="buy-btn">Purchase</a>
+    <a href="https://dsc.gg/bywix" class="buy-btn">Purchase</a>
   </div>
 
-  <!-- Full Tweak -->
   <div class="card">
     <h2>Full Tweak</h2>
     <div class="price">$14.99</div>
     <ul>
-      <li>✔ Max FPS boost</li>
-      <li>✔ Network optimization</li>
-      <li>✔ Best performance</li>
+      <li>✓ Max FPS boost</li>
+      <li>✓ Network optimization</li>
+      <li>✓ Best performance</li>
     </ul>
-    <a href="checkout-full.html" class="buy-btn">Purchase</a>
+    <a href="https://dsc.gg/bywix" class="buy-btn">Purchase</a>
   </div>
 
-  <!-- Temp Spoofer -->
   <div class="card">
     <h2>Temp Spoofer</h2>
     <div class="price">$5.99</div>
     <ul>
-      <li>✔ Temporary HWID reset</li>
-      <li>✔ Fast & reliable</li>
-      <li>✔ Easy to use</li>
+      <li>✓ Temporary HWID reset</li>
+      <li>✓ Fast & reliable</li>
+      <li>✓ Easy to use</li>
     </ul>
-    <a href="checkout-spoofer.html" class="buy-btn">Purchase</a>
+    <a href="https://dsc.gg/bywix" class="buy-btn">Purchase</a>
   </div>
-
 </section>
 
 <footer>
-© 2026 bywix — all rights reserved
+  © 2026 bywix — all rights reserved
 </footer>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * -14;
+    const rotateY = ((x / rect.width) - 0.5) * 14;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    card.style.setProperty('--x', `${x}px`);
+    card.style.setProperty('--y', `${y}px`);
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0) rotateY(0)';
+  });
+});
+</script>
 
 </body>
 </html>
