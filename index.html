@@ -2,122 +2,100 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>bywix</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bywix store</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body{
-  background:#050505;
-  color:#fff;
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
 }
 
-/* ===== HEADER ===== */
-header{
-  padding:60px 20px;
-  text-align:center;
+header {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-header h1{
-  color:#ff1e1e;
-  font-size:48px;
-  letter-spacing:2px;
+header h1 {
+  font-size: 52px;
+  font-weight: 900;
+  color: #ff0000;
+  margin-bottom: 10px;
 }
 
-/* ===== PRODUCTS ===== */
-.products{
-  max-width:1300px;
-  margin:60px auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:40px;
+header p {
+  font-size: 18px;
+  opacity: 0.8;
 }
 
-.card{
-  background:linear-gradient(160deg,#0d0d0d,#020202);
-  border-radius:22px;
-  padding:26px;
-  border:1px solid rgba(255,30,30,.35);
-  box-shadow:0 0 40px rgba(255,0,0,.15);
-  transition:.4s;
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 70px rgba(255,0,0,.35);
+.card {
+  background: #0b0b0b;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #ff0000;
+  text-align: center;
+  transition: 0.3s;
 }
 
-.card img{
-  width:100%;
-  border-radius:16px;
-  margin-bottom:20px;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255,0,0,0.4);
 }
 
-.card h2{
-  font-size:24px;
-  margin-bottom:8px;
+.card h2 {
+  margin-bottom: 10px;
 }
 
-.price{
-  color:#ff1e1e;
-  font-size:22px;
-  font-weight:bold;
-  margin-bottom:12px;
+.price {
+  font-size: 26px;
+  color: #ff0000;
+  font-weight: bold;
+  margin: 15px 0;
 }
 
-.desc{
-  color:#bbb;
-  font-size:14px;
-  line-height:1.7;
-  margin-bottom:18px;
+.card ul {
+  text-align: left;
+  margin: 20px 0;
 }
 
-.features{
-  list-style:none;
-  margin-bottom:25px;
+.card ul li {
+  margin-bottom: 8px;
 }
 
-.features li{
-  margin-bottom:10px;
-  color:#ddd;
+.buy-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 40px;
+  background: #ff0000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.features li::before{
-  content:"▶";
-  color:#ff1e1e;
-  margin-right:8px;
+.buy-btn:hover {
+  background: #fff;
+  color: #000;
 }
 
-.buy{
-  display:block;
-  text-align:center;
-  padding:14px;
-  background:#ff1e1e;
-  color:#fff;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.buy:hover{
-  background:#ff4d4d;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  margin-top:80px;
-  padding:30px;
-  text-align:center;
-  color:#777;
-  border-top:1px solid #111;
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -125,75 +103,52 @@ footer{
 <body>
 
 <header>
-  <h1>bywix</h1>
+  <h1>bywix store</h1>
+  <p>premium gaming tweaks & performance tools</p>
 </header>
 
 <section class="products">
 
   <!-- Tweak Delay -->
   <div class="card">
-    <img src="product.png">
     <h2>Tweak Delay</h2>
     <div class="price">$7.99</div>
-    <div class="desc">
-      Delay optimization tweak designed to reduce input latency
-      and improve overall system responsiveness.
-    </div>
-    <ul class="features">
-      <li>Lower input delay</li>
-      <li>Smoother gameplay</li>
-      <li>Instant response improvement</li>
-      <li>Safe & lightweight</li>
+    <ul>
+      <li>✔ Reduce input delay</li>
+      <li>✔ Smooth gameplay</li>
+      <li>✔ Safe & optimized</li>
     </ul>
-    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
-      Purchase via Discord
-    </a>
+    <a href="checkout-delay.html" class="buy-btn">Purchase</a>
   </div>
 
   <!-- Full Tweak -->
   <div class="card">
-    <img src="product.png">
     <h2>Full Tweak</h2>
     <div class="price">$14.99</div>
-    <div class="desc">
-      Complete performance optimization package
-      built for competitive players.
-    </div>
-    <ul class="features">
-      <li>FPS boost</li>
-      <li>Latency reduction</li>
-      <li>Advanced system tuning</li>
-      <li>Maximum performance</li>
+    <ul>
+      <li>✔ Max FPS boost</li>
+      <li>✔ Network optimization</li>
+      <li>✔ Best performance</li>
     </ul>
-    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
-      Purchase via Discord
-    </a>
+    <a href="checkout-full.html" class="buy-btn">Purchase</a>
   </div>
 
   <!-- Temp Spoofer -->
   <div class="card">
-    <img src="product.png">
     <h2>Temp Spoofer</h2>
     <div class="price">$5.99</div>
-    <div class="desc">
-      Temporary spoofing solution for quick HWID reset
-      with simple and secure usage.
-    </div>
-    <ul class="features">
-      <li>Temporary HWID spoof</li>
-      <li>Fast execution</li>
-      <li>Undetectable method</li>
-      <li>Easy to use</li>
+    <ul>
+      <li>✔ Temporary HWID reset</li>
+      <li>✔ Fast & reliable</li>
+      <li>✔ Easy to use</li>
     </ul>
-    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
-      Purchase via Discord
-    </a>
+    <a href="checkout-spoofer.html" class="buy-btn">Purchase</a>
   </div>
 
 </section>
 
 <footer>
-  © 2026 bywix. All rights reserved.
+© 2026 bywix — all rights reserved
 </footer>
 
 </body>
