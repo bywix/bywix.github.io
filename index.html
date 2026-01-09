@@ -11,12 +11,13 @@ body{
   background:#000;
   color:#fff;
   cursor:none;
+  overflow-x:hidden;
 }
 
 /* ===== CURSOR ===== */
 .cursor{
   position:fixed;
-  width:18px;height:18px;
+  width:16px;height:16px;
   border:2px solid #ff0000;
   border-radius:50%;
   pointer-events:none;
@@ -27,25 +28,53 @@ body{
   content:"";
   position:absolute;
   inset:-10px;
-  background:rgba(255,0,0,.15);
   border-radius:50%;
+  background:rgba(255,0,0,.12);
 }
 
 /* ===== HEADER ===== */
-header{text-align:center;padding:90px 20px 40px}
-header h1{font-size:56px;color:#ff0000;font-weight:900}
-header p{opacity:.7;margin-top:8px}
+header{
+  text-align:center;
+  padding:80px 20px 30px;
+}
+header h1{
+  font-size:56px;
+  color:#ff0000;
+  font-weight:900;
+}
+header p{
+  opacity:.7;
+  margin-top:8px;
+}
+
+/* join discord */
+.join-discord{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 30px;
+  border:2px solid #ff0000;
+  border-radius:30px;
+  color:#ff0000;
+  text-decoration:none;
+  transition:.3s;
+}
+.join-discord:hover{
+  background:#ff0000;
+  color:#fff;
+  box-shadow:0 0 30px #ff0000;
+  transform:scale(1.08);
+}
 
 /* ===== HERO IMAGE ===== */
 .hero-img{
   width:420px;
   max-width:90%;
-  margin:40px auto;
+  margin:40px auto 10px;
   display:block;
   border-radius:22px;
-  box-shadow:0 0 80px rgba(255,0,0,.6);
+  box-shadow:0 0 90px rgba(255,0,0,.6);
   transform-style:preserve-3d;
-  transition:transform .15s ease-out;
+  transition:transform .3s ease-out;
 }
 
 /* ===== PRODUCTS ===== */
@@ -53,41 +82,44 @@ header p{opacity:.7;margin-top:8px}
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:45px;
-  padding:60px 8% 120px;
+  padding:80px 8% 120px;
 }
 
 /* ===== CARD ===== */
 .card{
   position:relative;
   background:#050505;
-  border:1px solid #ff0000;
-  border-radius:26px;
-  padding:55px 30px 45px;
+  border:3px solid #ff0000;
+  border-radius:28px;
+  padding:60px 30px 45px;
   text-align:center;
   transform-style:preserve-3d;
-  transition:.2s ease;
+  transition:.25s ease;
+  box-shadow:0 0 35px rgba(255,0,0,.45);
+  pointer-events:auto;
 }
 
-/* product label (FIXED – no cut) */
+/* product label */
 .label{
   position:absolute;
-  top:-18px;
+  top:-20px;
   left:50%;
   transform:translateX(-50%);
-  padding:8px 22px;
+  padding:8px 24px;
   background:#000;
-  border:1px solid #ff0000;
+  border:2px solid #ff0000;
   border-radius:20px;
   color:#ff0000;
   font-size:14px;
   white-space:nowrap;
+  box-shadow:0 0 20px rgba(255,0,0,.6);
 }
 
 /* corner animation only */
 .corner{
   position:absolute;
-  width:16px;height:16px;
-  border:2px solid #ff0000;
+  width:18px;height:18px;
+  border:3px solid #ff0000;
   animation:pulse 3s infinite;
 }
 .c1{top:10px;left:10px;border-right:none;border-bottom:none}
@@ -96,7 +128,7 @@ header p{opacity:.7;margin-top:8px}
 .c4{bottom:10px;right:10px;border-left:none;border-top:none}
 
 @keyframes pulse{
-  0%,100%{opacity:.3}
+  0%,100%{opacity:.4}
   50%{opacity:1}
 }
 
@@ -106,39 +138,43 @@ header p{opacity:.7;margin-top:8px}
   font-size:26px;
   font-weight:bold;
   margin:15px 0;
-  animation:pricePulse 2.5s infinite;
+  animation:pricePulse 3.5s infinite;
 }
 
 @keyframes pricePulse{
   0%,100%{transform:scale(1)}
-  50%{transform:scale(1.04)}
+  50%{transform:scale(1.03)}
 }
 
 ul{text-align:left;margin:20px 0}
 li{margin:6px 0;opacity:.85}
 
 button{
-  padding:14px 36px;
+  padding:14px 38px;
   border:none;
   border-radius:30px;
   background:#ff0000;
   color:#fff;
   cursor:pointer;
   transition:.25s;
+  pointer-events:auto;
 }
-button:hover{transform:scale(1.08);box-shadow:0 0 25px #ff0000}
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 30px #ff0000;
+}
 
 /* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:50px 20px;
-  border-top:1px solid #ff0000;
+  padding:60px 20px;
+  border-top:2px solid #ff0000;
 }
 .socials a{
   display:inline-block;
   margin:0 10px;
-  padding:12px 28px;
-  border:1px solid #ff0000;
+  padding:12px 30px;
+  border:2px solid #ff0000;
   border-radius:30px;
   color:#ff0000;
   text-decoration:none;
@@ -148,6 +184,7 @@ footer{
   background:#ff0000;
   color:#fff;
   transform:scale(1.1);
+  box-shadow:0 0 25px #ff0000;
 }
 </style>
 </head>
@@ -158,10 +195,12 @@ footer{
 <header>
   <h1>bywix store</h1>
   <p>premium gaming tweaks & performance tools</p>
+  <a href="https://discord.gg/YOURSERVER" class="join-discord" target="_blank">Join Discord</a>
   <img src="bywix.png" class="hero-img" id="hero">
 </header>
 
 <section class="products">
+
   <div class="card">
     <div class="label">Tweak Delay</div>
     <div class="corner c1"></div><div class="corner c2"></div>
@@ -203,44 +242,51 @@ footer{
     </ul>
     <button>Purchase</button>
   </div>
+
 </section>
 
 <footer>
   <div class="socials">
-    <a href="#">Discord</a>
+    <a href="https://discord.gg/YOURSERVER" target="_blank">Discord</a>
     <a href="https://tiktok.com/@bywix" target="_blank">TikTok</a>
   </div>
-  <p style="margin-top:20px;opacity:.6">bywix © 2026</p>
+  <p style="margin-top:20px;opacity:.6">bywix © 2026 — All rights reserved</p>
 </footer>
 
 <script>
+/* cursor */
 const cursor=document.querySelector('.cursor');
 document.addEventListener('mousemove',e=>{
   cursor.style.left=e.clientX+'px';
   cursor.style.top=e.clientY+'px';
 });
 
+/* hero slow 3D */
 const hero=document.getElementById('hero');
-let speed=0.003;
+let speed=0.0015;
 
 document.addEventListener('mousemove',e=>{
   const x=(window.innerWidth/2-e.clientX)*speed;
   const y=(window.innerHeight/2-e.clientY)*speed;
-  hero.style.transform=`rotateY(${x*40}deg) rotateX(${y*40}deg)`;
+  hero.style.transform=`rotateY(${x*30}deg) rotateX(${y*30}deg)`;
 });
 
-hero.addEventListener('mouseenter',()=>speed=0.006);
-hero.addEventListener('mouseleave',()=>speed=0.003);
+hero.addEventListener('mouseenter',()=>speed=0.0025);
+hero.addEventListener('mouseleave',()=>speed=0.0015);
 
+/* cards tilt */
 document.querySelectorAll('.card').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left-r.width/2)/20;
-    const y=(e.clientY-r.top-r.height/2)/20;
+    const x=(e.clientX-r.left-r.width/2)/25;
+    const y=(e.clientY-r.top-r.height/2)/25;
     card.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
   });
-  card.addEventListener('mouseleave',()=>card.style.transform='rotateY(0) rotateX(0)');
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='rotateY(0) rotateX(0)';
+  });
 });
 </script>
+
 </body>
 </html>
