@@ -6,12 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 
 body{
   background:#000;
@@ -19,83 +14,84 @@ body{
   overflow-x:hidden;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   text-align:center;
   padding:90px 20px 40px;
+  animation:fadeDown 1.2s ease forwards;
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 header h1{
-  font-size:52px;
+  font-size:54px;
   font-weight:900;
   color:#ff0000;
 }
 
 header p{
   margin-top:10px;
-  opacity:.75;
+  opacity:.7;
 }
 
-/* HERO IMAGE */
+/* ===== IMAGE ===== */
 .hero-img{
-  margin:55px auto 30px;
+  margin:45px auto 20px;
   display:block;
   width:420px;
   max-width:90%;
   border-radius:22px;
-  box-shadow:0 0 70px rgba(255,0,0,.6);
-  transition:.15s ease-out;
+  box-shadow:0 0 70px rgba(255,0,0,.7);
+  transition:transform .15s ease-out;
+  animation:float 4s ease-in-out infinite;
 }
 
-/* PRODUCTS */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+  100%{transform:translateY(0)}
+}
+
+/* ===== PRODUCTS ===== */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:45px;
-  padding:30px 8% 90px;
+  padding:40px 8% 100px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
   position:relative;
   background:linear-gradient(145deg,#0b0b0b,#050505);
   border:1px solid #ff0000;
-  border-radius:22px;
-  padding:60px 30px 45px;
+  border-radius:24px;
+  padding:65px 30px 50px;
   text-align:center;
-  transform-style:preserve-3d;
-  opacity:0;
-  transform:translateY(60px);
-  transition:.8s ease;
+  transition:.5s ease;
+  animation:fadeUp 1.2s ease forwards;
 }
 
-.card.show{
-  opacity:1;
-  transform:translateY(0);
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(50px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-.card::after{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:22px;
-  background:linear-gradient(120deg,transparent,rgba(255,0,0,.4),transparent);
-  opacity:.2;
-  animation:glow 3s infinite linear;
+.card:hover{
+  transform:translateY(-14px) scale(1.04);
+  box-shadow:0 0 60px rgba(255,0,0,.8);
 }
 
-@keyframes glow{
-  0%{background-position:0%}
-  100%{background-position:200%}
-}
-
-/* LABEL */
+/* ===== LABEL ===== */
 .card-label{
   position:absolute;
   top:-18px;
   left:50%;
   transform:translateX(-50%);
-  padding:8px 24px;
+  padding:8px 22px;
   background:#000;
   border:1px solid #ff0000;
   border-radius:999px;
@@ -103,87 +99,88 @@ header p{
   font-weight:900;
   font-size:13px;
   letter-spacing:1px;
-  box-shadow:0 0 25px rgba(255,0,0,.6);
+  pointer-events:none;
 }
 
-/* PRICE */
+/* ===== PRICE ===== */
 .price{
   color:#ff2b2b;
-  font-size:28px;
+  font-size:30px;
   font-weight:900;
-  margin-bottom:20px;
-  animation:pricePulse 2.2s infinite;
+  margin-bottom:22px;
+  animation:pricePulse 1.6s infinite;
 }
 
 @keyframes pricePulse{
   0%{transform:scale(1)}
-  50%{transform:scale(1.08)}
+  50%{transform:scale(1.12)}
   100%{transform:scale(1)}
 }
 
-/* LIST */
+/* ===== LIST ===== */
 .card ul{
   list-style:none;
-  margin-bottom:30px;
+  margin-bottom:35px;
   text-align:left;
 }
 
 .card ul li{
-  margin-bottom:9px;
+  margin-bottom:10px;
   font-size:14px;
 }
 
-/* BUTTONS */
-.buy-btn,
-.social-btn{
+/* ===== BUTTON ===== */
+.buy-btn{
   display:inline-block;
-  padding:14px 46px;
+  padding:15px 50px;
   background:#ff0000;
   color:#fff;
   border-radius:999px;
   font-weight:900;
   text-decoration:none;
-  transition:.35s ease;
-  margin:6px;
+  transition:.3s ease;
 }
 
-.buy-btn:hover,
-.social-btn:hover{
-  transform:scale(1.18) rotate(-1deg);
-  box-shadow:0 0 45px rgba(255,0,0,.9);
+.buy-btn:hover{
+  transform:scale(1.18);
+  box-shadow:0 0 45px rgba(255,0,0,1);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:55px 20px 45px;
+  padding:55px 20px;
   border-top:1px solid rgba(255,0,0,.3);
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
-}
-
-footer.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 footer h3{
   color:#ff0000;
   font-weight:900;
-  letter-spacing:1px;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
 footer p{
   font-size:13px;
-  opacity:.65;
-  margin-bottom:18px;
+  opacity:.6;
+  margin-bottom:20px;
 }
 
-/* SOCIAL BUTTONS */
-.socials{
-  margin-top:15px;
+/* ===== SOCIAL ===== */
+.social-btn{
+  display:inline-block;
+  margin:6px;
+  padding:13px 36px;
+  background:#ff0000;
+  color:#fff;
+  border-radius:999px;
+  font-weight:900;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.social-btn:hover{
+  transform:scale(1.2) rotate(-2deg);
+  box-shadow:0 0 40px rgba(255,0,0,1);
 }
 </style>
 </head>
@@ -236,41 +233,20 @@ footer p{
 
 </section>
 
-<footer id="footer">
+<footer>
   <h3>bywix © 2026</h3>
   <p>All rights reserved • Unauthorized resale is prohibited</p>
-
-  <div class="socials">
-    <a class="social-btn" href="https://dsc.gg/bywix" target="_blank">Discord</a>
-    <a class="social-btn" href="https://www.tiktok.com/@bywix" target="_blank">TikTok</a>
-  </div>
+  <a class="social-btn" href="https://dsc.gg/bywix" target="_blank">Discord</a>
+  <a class="social-btn" href="https://www.tiktok.com/@bywix" target="_blank">TikTok</a>
 </footer>
 
 <script>
-/* HERO FOLLOW */
+/* IMAGE FOLLOW */
 const hero = document.getElementById("hero");
 document.addEventListener("mousemove", e=>{
-  const x = (window.innerWidth/2 - e.pageX)/30;
-  const y = (window.innerHeight/2 - e.pageY)/30;
-  hero.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-});
-
-/* SCROLL ANIMATION */
-const cards = document.querySelectorAll(".card");
-const footer = document.getElementById("footer");
-
-window.addEventListener("scroll", ()=>{
-  const trigger = window.innerHeight * 0.85;
-
-  cards.forEach(card=>{
-    if(card.getBoundingClientRect().top < trigger){
-      card.classList.add("show");
-    }
-  });
-
-  if(footer.getBoundingClientRect().top < trigger){
-    footer.classList.add("show");
-  }
+  const x = (window.innerWidth/2 - e.pageX)/35;
+  const y = (window.innerHeight/2 - e.pageY)/35;
+  hero.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateY(-10px)`;
 });
 </script>
 
