@@ -1,77 +1,133 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>Bywix</title>
-    <style>
-        body {
-            background:#0b0b0b;
-            color:#ffffff;
-            font-family: Arial, sans-serif;
-            text-align:center;
-        }
+  <meta charset="UTF-8">
+  <title>BYWIX STORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        h1 {
-            color:#ff1e1e;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #111 0%, #000 70%);
+      color: white;
+      text-align: center;
+    }
 
-        .product {
-            background:#141414;
-            margin:25px auto;
-            padding:22px;
-            width:330px;
-            border-radius:14px;
-            border:1px solid #ff1e1e;
-            box-shadow: 0 0 15px rgba(255,30,30,0.2);
-        }
+    h1 {
+      margin-top: 60px;
+      color: red;
+      letter-spacing: 3px;
+    }
 
-        .product h2 {
-            color:#ff1e1e;
-        }
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 40px;
+    }
 
-        .btn {
-            display:inline-block;
-            margin:12px;
-            padding:12px 26px;
-            background:linear-gradient(135deg, #ff1e1e, #b30000);
-            color:#fff;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
-            transition: 0.3s;
-        }
+    .card {
+      background: #0f0f0f;
+      border: 1px solid red;
+      border-radius: 14px;
+      padding: 30px;
+      width: 320px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(255,0,0,0.2);
+    }
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 12px rgba(255,30,30,0.6);
-        }
+    .card h2 {
+      color: red;
+      margin-bottom: 20px;
+    }
 
-        .bank {
-            background:#0f0f0f;
-            border:1px dashed #ff1e1e;
-        }
+    .features {
+      text-align: right;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
 
-        footer {
-            margin-top:30px;
-            font-size:14px;
-            color:#aaa;
-        }
-    </style>
+    .price {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .discord {
+      background: #5865F2;
+      color: white;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: black;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-bottom: 30px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: red;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>BYWIX STORE</h1>
-<p>أدوات تحسين الأداء للألعاب</p>
+  <h1>BYWIX STORE</h1>
+  <div class="subtitle">أدوات تحسين الأداء للألعاب</div>
 
-<div class="product">
+  <div class="card">
     <h2>Tweak Performance Pack</h2>
-    <p>✔ تحسين FPS</p>
-    <p>✔ تقليل اللّاق</p>
-    <p><strong>السعر: 15$</strong></p>
+
+    <div class="features">
+      ✔ Boost FPS<br>
+      ✔ Tweks For Letancy/Delay<br>
+      ✔ Temp Spoofer
+    </div>
+
+    <div class="price">السعر: 15$</div>
+
     <div class="buttons">
-  <a href="https://discord.gg/XXXX" class="btn discord">Discord</a>
-  <a href="https://wa.me/966XXXXXXXX" class="btn whatsapp">WhatsApp</a>
-</div>
+      <a href="https://discord.gg/XXXX" class="btn discord">Discord</a>
+      <a href="https://wa.me/966XXXXXXXX" class="btn whatsapp">WhatsApp</a>
+    </div>
+  </div>
 
+  <footer>
+    <p>© 2026 BYWIX STORE</p>
+    <p>
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Contact</a>
+    </p>
+  </footer>
 
-    <a class="btn" href="htt
+</body>
+</html>
