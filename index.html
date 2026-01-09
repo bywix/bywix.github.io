@@ -6,106 +6,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* HEADER */
-header{
-text-align:center;
-padding:90px 20px 50px;
+body {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
 }
 
-header h1{
-font-size:48px;
-font-weight:900;
-color:#ff0000;
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-header p{
-margin-top:10px;
-opacity:.8;
+header h1 {
+    color: #ff2a00;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-.hero-img{
-margin:60px auto 40px;
-display:block;
-width:420px;
-max-width:90%;
-border-radius:22px;
-box-shadow:0 0 50px rgba(255,0,0,.5);
-transition:.2s;
+header p {
+    color: #aaa;
+    margin-top: 10px;
+    font-size: 15px;
 }
 
-/* PRODUCTS */
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-padding:50px 8% 80px;
+/* ===== PRODUCTS ===== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px;
 }
 
-.card{
-background:#0b0b0b;
-border:1px solid #ff0000;
-border-radius:22px;
-padding:35px;
-text-align:center;
-transition:.2s;
-transform-style:preserve-3d;
+/* ===== CARD ===== */
+.card {
+    background: radial-gradient(circle at top, #2a0000, #050505);
+    border-radius: 22px;
+    padding: 25px;
+    position: relative;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 42, 0, 0.25);
+    overflow: hidden;
+    transform-style: preserve-3d;
 }
 
-.card:hover{
-box-shadow:0 0 50px rgba(255,0,0,.7);
+/* glow */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(255,42,0,0.15), transparent 60%);
+    opacity: 0;
+    transition: 0.4s;
 }
 
-.card h2{
-margin-bottom:10px;
+.card:hover::before {
+    opacity: 1;
 }
 
-.price{
-color:#ff2b2b;
-font-size:22px;
-font-weight:900;
-margin-bottom:15px;
+/* image */
+.card img {
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 20px;
 }
 
-.card ul{
-list-style:none;
-margin-bottom:25px;
-text-align:left;
+/* text */
+.card h2 {
+    font-size: 22px;
+    font-weight: 800;
 }
 
-.card ul li{
-margin-bottom:8px;
-font-size:14px;
+.price {
+    color: #ff2a00;
+    font-size: 22px;
+    font-weight: 900;
+    margin: 8px 0 14px;
 }
 
-.buy-btn{
-display:inline-block;
-padding:14px 45px;
-background:#ff0000;
-color:#fff;
-border-radius:999px;
-font-weight:900;
-text-decoration:none;
-transition:.25s;
+.card p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.buy-btn:hover{
-transform:scale(1.1);
+/* button */
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background: #ff2a00;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-font-size:13px;
-opacity:.6;
+button:hover {
+    background: #ff3b18;
+    transform: scale(1.04);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 13px;
 }
 </style>
 </head>
@@ -113,83 +131,58 @@ opacity:.6;
 <body>
 
 <header>
-<h1>bywix store</h1>
-<p>premium gaming tweaks & performance tools</p>
-
-<img src="product.png" class="hero-img" id="hero">
+    <h1>bywix store</h1>
+    <p>premium gaming tweaks & performance tools</p>
 </header>
 
 <section class="products">
 
-<div class="card">
-<h2>Tweak Delay</h2>
-<div class="price">$7.99</div>
-<ul>
-<li>✓ Reduce input delay</li>
-<li>✓ Smooth gameplay</li>
-<li>✓ Safe & optimized</li>
-</ul>
-<a class="buy-btn" href="https://www.paypal.me/bywixstore/7.99" target="_blank">
-Purchase
-</a>
-</div>
+    <div class="card">
+        <img src="product.png" alt="Temp Spoofer">
+        <h2>Temp Spoofer</h2>
+        <div class="price">$15</div>
+        <p>Temporary spoof solution for fast HWID reset. Lightweight, secure and undetectable.</p>
+        <button>Purchase</button>
+    </div>
 
-<div class="card">
-<h2>Full Tweak</h2>
-<div class="price">$14.99</div>
-<ul>
-<li>✓ Max FPS boost</li>
-<li>✓ Network optimization</li>
-<li>✓ Best performance</li>
-</ul>
-<a class="buy-btn" href="https://www.paypal.me/bywixstore/14.99" target="_blank">
-Purchase
-</a>
-</div>
+    <div class="card">
+        <img src="product.png" alt="Full Tweak">
+        <h2>Full Tweak</h2>
+        <div class="price">$14.99</div>
+        <p>Max FPS boost, network optimization and best in-game performance.</p>
+        <button>Purchase</button>
+    </div>
 
-<div class="card">
-<h2>Temp Spoofer</h2>
-<div class="price">$5.99</div>
-<ul>
-<li>✓ Temporary HWID reset</li>
-<li>✓ Fast & reliable</li>
-<li>✓ Easy to use</li>
-</ul>
-<a class="buy-btn" href="https://www.paypal.me/bywixstore/5.99" target="_blank">
-Purchase
-</a>
-</div>
+    <div class="card">
+        <img src="product.png" alt="Tweak Delay">
+        <h2>Tweak Delay</h2>
+        <div class="price">$7.99</div>
+        <p>Reduce input delay, smooth gameplay and safe optimized settings.</p>
+        <button>Purchase</button>
+    </div>
 
 </section>
 
 <footer>
-© 2026 bywix — all rights reserved
+    © 2026 bywix — all rights reserved
 </footer>
 
 <script>
-/* Mouse animation on product image */
-const img = document.getElementById("hero");
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-document.addEventListener("mousemove", e => {
-  const x = (window.innerWidth / 2 - e.pageX) / 30;
-  const y = (window.innerHeight / 2 - e.pageY) / 30;
-  img.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-});
+        const rotateX = (y / rect.height - 0.5) * 15;
+        const rotateY = (x / rect.width - 0.5) * -15;
 
-/* Cards tilt */
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mousemove", e=>{
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    card.style.transform = `rotateY(${(x-cx)/15}deg) rotateX(${-(y-cy)/15}deg)`;
-  });
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    });
 
-  card.addEventListener("mouseleave", ()=>{
-    card.style.transform = "rotateY(0) rotateX(0)";
-  });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    });
 });
 </script>
 
