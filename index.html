@@ -1,133 +1,194 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>BYWIX STORE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>BYWIX STORE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #111 0%, #000 70%);
-      color: white;
-      text-align: center;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
 
-    h1 {
-      margin-top: 60px;
-      color: red;
-      letter-spacing: 3px;
-    }
+body{
+  background:#0a0a0a;
+  color:#fff;
+}
 
-    .subtitle {
-      color: #aaa;
-      margin-bottom: 40px;
-    }
+/* ===== HEADER ===== */
+header{
+  padding:40px 20px;
+  text-align:center;
+}
 
-    .card {
-      background: #0f0f0f;
-      border: 1px solid red;
-      border-radius: 14px;
-      padding: 30px;
-      width: 320px;
-      margin: auto;
-      box-shadow: 0 0 25px rgba(255,0,0,0.2);
-    }
+header h1{
+  color:#ff1e1e;
+  font-size:42px;
+  letter-spacing:2px;
+}
 
-    .card h2 {
-      color: red;
-      margin-bottom: 20px;
-    }
+header p{
+  margin-top:10px;
+  color:#ccc;
+}
 
-    .features {
-      text-align: right;
-      margin-bottom: 20px;
-      line-height: 1.8;
-    }
+/* ===== DISCORD BUTTON ===== */
+.discord-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 28px;
+  background:#ff1e1e;
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
 
-    .price {
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: #fff;
-    }
+.discord-btn:hover{
+  background:#ff4d4d;
+  transform:scale(1.05);
+}
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+/* ===== PRODUCTS ===== */
+.container{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
 
-    .btn {
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
+.card{
+  background:linear-gradient(145deg,#0f0f0f,#050505);
+  border:1px solid rgba(255,30,30,.3);
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 0 30px rgba(255,0,0,.08);
+  transition:.4s;
+}
 
-    .discord {
-      background: #5865F2;
-      color: white;
-    }
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 50px rgba(255,0,0,.25);
+}
 
-    .whatsapp {
-      background: #25D366;
-      color: black;
-    }
+.image{
+  height:160px;
+  border-radius:12px;
+  background:radial-gradient(circle at top,#ff1e1e33,transparent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:#ff1e1e;
+}
 
-    .btn:hover {
-      transform: scale(1.08);
-      opacity: 0.9;
-    }
+.card h2{
+  margin:20px 0 10px;
+}
 
-    footer {
-      margin-top: 80px;
-      padding-bottom: 30px;
-      color: #777;
-      font-size: 14px;
-    }
+.price{
+  color:#ff1e1e;
+  font-size:24px;
+  font-weight:bold;
+}
 
-    footer a {
-      color: red;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-  </style>
+.desc{
+  color:#bbb;
+  margin:15px 0 25px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.buy{
+  display:block;
+  text-align:center;
+  padding:14px;
+  background:#ff1e1e;
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.buy:hover{
+  background:#ff4d4d;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:80px;
+  padding:30px;
+  text-align:center;
+  color:#666;
+  border-top:1px solid #1a1a1a;
+}
+</style>
 </head>
 
 <body>
 
+<header>
   <h1>BYWIX STORE</h1>
-  <div class="subtitle">أدوات تحسين الأداء للألعاب</div>
+  <p>Premium Gaming Tweaks & Performance Tools</p>
+  <a class="discord-btn" href="https://dsc.gg/bywix" target="_blank">
+    Join Discord
+  </a>
+</header>
+
+<section class="container">
 
   <div class="card">
-    <h2>Tweak Performance Pack</h2>
-
-    <div class="features">
-      ✔ Boost FPS<br>
-      ✔ Tweks For Letancy/Delay<br>
-      ✔ Temp Spoofer
+    <div class="image">TEMP SPOOFER</div>
+    <h2>Temp Spoofer</h2>
+    <div class="price">$15</div>
+    <div class="desc">
+      Temporary spoof solution for fast HWID reset.  
+      Lightweight, secure and undetectable.
     </div>
-
-    <div class="price">السعر: 15$</div>
-
-    <div class="buttons">
-      <a href="https://discord.gg/XXXX" class="btn discord">Discord</a>
-      <a href="https://wa.me/966XXXXXXXX" class="btn whatsapp">WhatsApp</a>
-    </div>
+    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
+      Purchase via Discord
+    </a>
   </div>
 
-  <footer>
-    <p>© 2026 BYWIX STORE</p>
-    <p>
-      <a href="#">Privacy</a> |
-      <a href="#">Terms</a> |
-      <a href="#">Contact</a>
-    </p>
-  </footer>
+  <div class="card">
+    <div class="image">PREMIUM</div>
+    <h2>Temp Spoofer Pro</h2>
+    <div class="price">$30</div>
+    <div class="desc">
+      Enhanced protection, extended spoof duration  
+      and advanced features.
+    </div>
+    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
+      Purchase via Discord
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="image">ULTIMATE</div>
+    <h2>Temp Spoofer Ultimate</h2>
+    <div class="price">$50</div>
+    <div class="desc">
+      Professional-grade spoofing solution  
+      built for competitive users.
+    </div>
+    <a class="buy" href="https://dsc.gg/bywix" target="_blank">
+      Purchase via Discord
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 BYWIX STORE — All purchases handled via Discord
+</footer>
 
 </body>
 </html>
